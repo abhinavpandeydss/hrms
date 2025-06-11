@@ -539,3 +539,6 @@
     font-size: 8rem;
   }
 }
+.dark ::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}

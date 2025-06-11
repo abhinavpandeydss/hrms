@@ -84,19 +84,14 @@ const Sidebar = ({ collapsed, onMobileClose }) => {
             <NavLink
               key={item.name}
               to={item.href}
-              className={`flex items-center ps-1 pe-5 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+              className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                 isActive(item.href)
-                  ? "bg-primary-50 dark:bg-primary-900 text-black dark:text-white border-r-2 border-primary-500"
+                  ? "bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400 border-r-2 border-primary-500"
                   : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
               }`}
               onClick={() => onMobileClose()}
-              style={({ isActive }) => {
-                return {
-                  backgroundColor: isActive ? theme.primary + 99 : "",
-                };
-              }}
             >
-              <Icon className="w-5 h-5 flex-shrink-0 text-black dark:text-gray-300" />
+              <Icon className="w-5 h-5 flex-shrink-0" />
               {!collapsed && <span className="ml-3 truncate">{item.name}</span>}
             </NavLink>
           );

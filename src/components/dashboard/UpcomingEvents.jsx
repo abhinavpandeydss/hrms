@@ -62,7 +62,8 @@ const UpcomingEvents = () => {
 
       <div className="space-y-4">
         {events.map((event) => {
-          const Icon = event.icon;
+          const eventIcon = event.icon;
+          const Icon = Icons[eventIcon];
           return (
             <div
               key={event.id}
@@ -83,11 +84,11 @@ const UpcomingEvents = () => {
                   </p>
                   <div className="flex items-center space-x-4 mt-2">
                     <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
-                      <Icons.FaRegCalendarAlt className="w-3 h-3 mr-1" />
+                      <Icon className="w-3 h-3 mr-1" />
                       {event.date}
                     </div>
                     <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
-                      <Icons.FaRegClock className="w-3 h-3 mr-1" />
+                      <Icon className="w-3 h-3 mr-1" />
                       {event.time}
                     </div>
                   </div>
