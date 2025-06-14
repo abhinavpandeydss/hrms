@@ -51,7 +51,11 @@ const Sidebar = ({ collapsed, onMobileClose }) => {
       </div>
       {/* User profile */}
       {user && (
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+        <div
+          className={`${
+            !collapsed ? "p-4" : "p-3"
+          } border-b border-gray-200 dark:border-gray-700`}
+        >
           <div className="flex items-center space-x-3">
             <div className="flex-shrink-0">
               <div
@@ -76,7 +80,7 @@ const Sidebar = ({ collapsed, onMobileClose }) => {
         </div>
       )}
       {/* Navigation */}
-      <nav className="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
+      <nav className="flex-1 px-2 py-3 space-y-2 overflow-y-auto">
         {navigationItems.map((item) => {
           const itemIcon = item.icon;
           const Icon = Icons[itemIcon];
@@ -84,7 +88,7 @@ const Sidebar = ({ collapsed, onMobileClose }) => {
             <NavLink
               key={item.name}
               to={item.href}
-              className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+              className={`flex items-center ps-2 pe-8 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                 isActive(item.href)
                   ? "bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400 border-r-2 border-primary-500"
                   : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
